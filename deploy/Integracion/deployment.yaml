@@ -17,19 +17,8 @@ spec:
       containers:
         - name: jobBaseName
           image: imageRegistry/appVersion
-          env:
-            - name: REACT_APP_API_GRAPHQL
-              value: "https://rme-backend-int.latam-imed.info/"
-            - name: REACT_APP_API_PERSON
-              value: "https://back-person-integracion.latam-imed.info/person"
-            - name: REACT_APP_API_URL_CONVERSOR
-              value: "https://conversor-integracion.latam-imed.info/conversor"
-            - name: REACT_APP_API_CIE
-              value: "https://cie-integracion.latam-imed.info/diagnostics_search"
-            - name: REACT_APP_API_LOGIN
-              value: "https://sso-auth-server.latam-imed.info/v1/sso-auth-service"
           ports:
-            - containerPort: 3000
+            - containerPort: 8080
           resources: {}
       restartPolicy: Always
 status: {}

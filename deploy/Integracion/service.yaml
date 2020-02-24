@@ -15,7 +15,7 @@ spec:
   ports:
   - port: 8080
     protocol: TCP
-    targetPort: 3000
+    targetPort: 8080
   selector:
     workloadID_jobBaseName: "true"
   sessionAffinity: None
