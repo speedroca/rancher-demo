@@ -1,0 +1,24 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  annotations:
+    field.cattle.io/ingressState: '{"bWVkLWJlbmVmaXRzL2RlZmF1bHQvbWVkLWJlb52s2qfzLmxhdGFtLWltZWQuaW5mby8vODALOL==":""}'
+    field.cattle.io/publicEndpoints: '[{"addresses":[""],"port":80,"protocol":"HTTP","serviceName":"default:jobBaseName","ingressName":"default:jobBaseName","hostname":"jobBaseName.qa-imed.com","allNodes":false}]'
+  generation: 1
+  labels:
+    cattle.io/creator: norman
+  name: jobBaseName
+  namespace: default
+  selfLink: /apis/extensions/v1beta1/namespaces/default/ingresses/jobBaseName
+spec:
+  rules:
+  - host: jobBaseName.qa-imed.com
+    http:
+      paths:
+      - backend:
+          serviceName: jobBaseName
+          servicePort: 8080
+status:
+  loadBalancer:
+    ingress:
+    - hostname: a834a44c63ca411eaad1a0a21bd38cb2-1972764031.us-east-1.elb.amazonaws.com

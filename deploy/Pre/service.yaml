@@ -1,0 +1,24 @@
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+    field.cattle.io/ipAddresses: "null"
+    field.cattle.io/targetDnsRecordIds: "null"
+    field.cattle.io/targetWorkloadIds: '["deployment:rancher-demo:jobBaseName"]'
+  labels:
+    cattle.io/creator: norman
+  name: jobBaseName
+  namespace: rancher-demo
+  selfLink: /api/v1/namespaces/rancher-demo/services/jobBaseName
+spec:
+  clusterIP: None
+  ports:
+    - port: 8080
+      protocol: TCP
+      targetPort: 3000
+  selector:
+    workloadID_jobBaseName: "true"
+  sessionAffinity: None
+  type: ClusterIP
+status:
+  loadBalancer: {}
