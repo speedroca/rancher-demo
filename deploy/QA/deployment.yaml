@@ -19,6 +19,7 @@ spec:
           image: imageRegistry/appVersion
           ports:
             - containerPort: 8080
+          imagePullPolicy: Always
           resources: {}
       restartPolicy: Always
 status: {}
