@@ -5,6 +5,8 @@ metadata:
   namespace: rancher-demo
   labels:
     app: jobBaseName
+    version: "{{Version}}"
+    build: "numberBuildJob"
 spec:
   replicas: 1
   selector:
