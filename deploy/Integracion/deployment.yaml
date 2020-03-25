@@ -4,8 +4,8 @@ metadata:
   name: jobBaseName
   labels:
     app: jobBaseName
-    version: appVersion
-    build: numberBuildJob
+    version: "version"
+    build: "numberBuildJob"
 spec:
   replicas: 1
   selector:
