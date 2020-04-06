@@ -51,7 +51,7 @@ spec:
         - name: gcr
       containers:
         - name: rancher-demo
-          image: monachus/rancher-demo
+          image: ${CICD_IMAGE}:lastest
           ports:
             - containerPort: 8080
           imagePullPolicy: Always
