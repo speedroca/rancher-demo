@@ -1,0 +1,22 @@
+stages:
+- name: Publish image
+  when:
+    branch: master
+    event: [ push, pull_request ]
+  steps:
+  - publishImageConfig:
+      dockerfilePath: ./Dockerfile
+      buildContext: .
+      tag: ${CICD_GIT_REPO_NAME}:lastest
+      pushRemote: true
+      registry: gcr.io/imed-cl
+- name: Deploy
+  when:
+    branch: master
+    event: [ push, pull_request ]
+  steps:
+  - applyYamlConfig:
+      path: ./deploy/PROD-G/deployment.yaml
+branch:
+  include: [ master ]
+notification: {}
