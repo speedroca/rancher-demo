@@ -1,0 +1,11 @@
+stages:
+- name: Deploy
+  when:
+    branch: master
+    event: [ push, pull_request ]
+  steps:
+  - applyYamlConfig:
+      path: ./deploy/PROD-G/deployment.yaml
+branch:
+  include: [ master ]
+notification: {}
