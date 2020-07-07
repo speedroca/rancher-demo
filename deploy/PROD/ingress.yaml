@@ -1,0 +1,24 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  annotations:
+    field.cattle.io/ingressState: '{"dvh7781yS6J5NHVJlwryaXAE2kFTVweOGBG1oOvSFnFHRe5p39N+dbGefAlg7Y9ugU4nW7hUC7T==":""}'
+    field.cattle.io/publicEndpoints: '[{"addresses":[""],"port":80,"protocol":"HTTP","serviceName":"rancher-demo:jobBaseName","ingressName":"rancher-demo:jobBaseName","hostname":"jobBaseName.i-med.cl","allNodes":false}]'
+  generation: 1
+  labels:
+    cattle.io/creator: norman
+  name: jobBaseName
+  namespace: rancher-demo
+  selfLink: /apis/extensions/v1beta1/namespaces/rancher-demo/ingresses/jobBaseName
+spec:
+  rules:
+    - host: rancher-demo-test.i-med.cl
+      http:
+        paths:
+          - backend:
+              serviceName: jobBaseName
+              servicePort: 8080
+status:
+  loadBalancer:
+    ingress:
+      - hostname: aafb3796e782011ea88c90e90ec42d22-1702942497.us-east-1.elb.amazonaws.com

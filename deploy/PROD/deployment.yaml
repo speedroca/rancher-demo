@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: jobBaseName
+  namespace: rancher-demo
+  labels:
+    app: jobBaseName
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: jobBaseName
+  template:
+    metadata:
+      labels:
+        app: jobBaseName
+        version: "{{Version}}"
+        build: "numberBuildJob"
+    spec:
+      containers:
+        - name: jobBaseName
+          image: imageRegistry/appVersion
+          ports:
+            - containerPort: 3333
+          imagePullPolicy: Always
+          resources: {}
+status: {}
