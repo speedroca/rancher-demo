@@ -10,6 +10,6 @@ RUN apk add -U --no-cache curl
 COPY static /static
 COPY --from=app /go/src/app/docker-demo /bin/docker-demo
 COPY templates /templates
-ENV COW_COLOR blue
+ENV COW_COLOR black
 EXPOSE 8080
 ENTRYPOINT ["/bin/docker-demo"]
