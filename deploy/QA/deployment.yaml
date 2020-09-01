@@ -27,7 +27,7 @@ spec:
           lifecycle:
             postStart:
               exec:
-                command: ["/bin/ash", "-c", "apk add tzdata && cp /usr/share/zoneinfo/$TZ /etc/localtime && apk del tzdata && date"]
+                command: ["ash", "-c", "apk add tzdata && cp /usr/share/zoneinfo/$TZ /etc/localtime && apk del tzdata && date"]
           resources: {}
       restartPolicy: Always
 status: {}
