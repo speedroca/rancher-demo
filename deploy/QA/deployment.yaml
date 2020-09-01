@@ -19,6 +19,8 @@ spec:
       containers:
         - name: jobBaseName
           image: imageRegistry/appVersion
+          env:
+            - name: TZ
           ports:
             - containerPort: 8080
           imagePullPolicy: Always
