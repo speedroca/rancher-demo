@@ -27,7 +27,15 @@ spec:
           lifecycle:
             postStart:
               exec:
-                command: ["sh", "-c", "apk add tzdata && cp /usr/share/zoneinfo/$TZ /etc/localtime"]
-          resources: {}
+                command:
+                  [
+                    "sh",
+                    "-c",
+                    "apk add tzdata && cp /usr/share/zoneinfo/$TZ /etc/localtime",
+                  ]
+          resources:
+            limits:
+              cpu: "250m"
+              memory: "100Mi"
       restartPolicy: Always
 status: {}
