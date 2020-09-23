@@ -35,7 +35,7 @@ spec:
                   ]
           resources:
             limits:
-              cpu: "30m"
-              memory: "7Mi"
+              cpu: "100m"
+              memory: "25Mi"
       restartPolicy: Always
 status: {}
