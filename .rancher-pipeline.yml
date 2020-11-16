@@ -4,16 +4,7 @@ stages:
   - publishImageConfig:
       dockerfilePath: ./Dockerfile
       buildContext: .
-      tag: ${CICD_GIT_REPO_NAME}:lastest
+      tag: rancher-demo:latest
       pushRemote: true
-      registry: https://hub.docker.com/u/infoubicatecl/
-# - name: Deploy
-#   when:
-#     branch: master
-#     event: [ push, pull_request ]
-#   steps:
-#   - applyYamlConfig:
-#       path: ./deploy/PROD-G/deployment.yaml
-# branch:
-#   include: [ master ]
+      registry: 127.0.0.1:34573
 notification: {}
