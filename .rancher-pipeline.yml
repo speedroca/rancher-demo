@@ -6,7 +6,7 @@ stages:
       buildContext: .
       tag: ${CICD_GIT_REPO_NAME}:lastest
       pushRemote: true
-      registry: gcr.io/imed-cl
+      registry: https://hub.docker.com/u/infoubicatecl/
   when:
     branch:
       include:
