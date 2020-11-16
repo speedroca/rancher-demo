@@ -1,8 +1,5 @@
 stages:
 - name: Publish image
-  when:
-    branch: master
-    event: [ push, pull_request ]
   steps:
   - publishImageConfig:
       dockerfilePath: ./Dockerfile
