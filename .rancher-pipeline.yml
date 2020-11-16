@@ -6,14 +6,8 @@ stages:
       buildContext: .
       tag: ${CICD_GIT_REPO_NAME}:lastest
       pushRemote: true
-      registry: https://hub.docker.com/u/infoubicatecl/
-# - name: Deploy
-#   when:
-#     branch: master
-#     event: [ push, pull_request ]
-#   steps:
-#   - applyYamlConfig:
-#       path: ./deploy/PROD-G/deployment.yaml
+      registry: 127.0.0.1:34573
 branch:
-  include: [ master ]
+  include:
+  - master
 notification: {}
