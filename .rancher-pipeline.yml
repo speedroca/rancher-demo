@@ -4,7 +4,10 @@ stages:
   - publishImageConfig:
       dockerfilePath: ./Dockerfile
       buildContext: .
-      tag: rancher-demo:latest
+      tag: ${CICD_GIT_REPO_NAME}:latest
       pushRemote: true
-      registry: 127.0.0.1:34573
+      registry: index.docker.io
+branch:
+  include:
+  - master
 notification: {}
