@@ -4,10 +4,14 @@ stages:
   - publishImageConfig:
       dockerfilePath: ./Dockerfile
       buildContext: .
-      tag: ${CICD_GIT_REPO_NAME}:latest
+      tag: infoubicatecl/${CICD_GIT_REPO_NAME}/helloworld:latest
       pushRemote: true
       registry: index.docker.io
+- name: Deploy
+  steps:
+  - applyYamlConfig:
+      path: ./deployment.yaml
 branch:
   include:
-  - master
+  - Master
 notification: {}
